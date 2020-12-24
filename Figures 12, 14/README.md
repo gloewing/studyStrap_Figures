@@ -1,4 +1,4 @@
-# Figures 16 and 18
+# Figures 12 and 14
 
 ## Figure Generation
 
