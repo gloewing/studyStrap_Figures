@@ -7,7 +7,6 @@ load("rdas/cv-average.rda")
 load("rdas/operating-characteristics.rda")
 dslabs::ds_theme_set(new = "theme_minimal")
 
-# gabe added for derivative
 A <- matrix(NA, ncol = 999, nrow = 15)
 for ( i in 1:15){
     A[i,] <- diff(as.matrix(colMeans(full[full$Electrode == i,(ncol(full) - 999):ncol(full)])))
