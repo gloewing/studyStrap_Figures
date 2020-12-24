@@ -1,4 +1,4 @@
-# Figure 5
+# Figure 5 and Table 2
 
 The R code to run the methods (and the respective outputs) for the raw covariates is in the folder "/Raw" and for the derivative of the covariates is in the folder: "/Diff"
 
@@ -16,6 +16,6 @@ where "y" is the study number that was held out.
 
 The output files of the AR algorithm are in "~/AR/AR Output Files"
 
-## Figure Generation
+## Figure and Table Generation
 
-The code that takes that output and generates the Figure is in "Box and Whisker Plot of Raw FullLog.R"
+The code that takes that output and generates the Figure and Table 2 is in "Box and Whisker Plot of Raw FullLog.R"
