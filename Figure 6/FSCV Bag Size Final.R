@@ -50,8 +50,6 @@ for(sz in bagSzs){
 }
 naive <- read.csv("Stacked PCR Results 0 Truncate (8-17)y_tuneMet_6_smpSz_2500_subSampInd_1")
 
-#res <- c(mean(naive$Mean / merged.mean), res)
-#bags <- c(1, bags)
 bags <- factor(bags, levels = c(bagSzs))#levels = c(1, bagSzs))
 
 df2 <- data.frame(RMSE = res, Bag.Size = bags, Derivative = "Raw")
