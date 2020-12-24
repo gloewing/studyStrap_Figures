@@ -1,6 +1,6 @@
 # Figure 5
 
-The R code to run the methods (and the respective outputs) for the raw covariates is in the folder "~/Raw" and for the derivative of the covariates is in the folder: "~/Diff"
+The R code to run the methods (and the respective outputs) for the raw covariates is in the folder "/Raw" and for the derivative of the covariates is in the folder: "/Diff"
 
 Within each of these folders are the following folders that each contain code and output for the corresponding algorithms.
 
