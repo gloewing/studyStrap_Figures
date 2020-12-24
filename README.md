@@ -1,6 +1,6 @@
 # Figures and Methods Code
 
-The R code to run the methods is in the folders associated with the corresponding figure (or table). These include the output files generated from the Harvard Odyssey ("general" partition) cluster on which the methods were run. All figures were generated on a a macOSX 10.12.6 personal computer.
+The R code to run the methods is in the folders associated with the corresponding figure (or table). These include the output files generated from the Harvard Odyssey ("general" or "shared" partition) cluster on which the methods were run. All figures were generated on a a macOSX 10.12.6 personal computer.
 
 Some of the methods (R code) will require data and functions given in the folder "Functions and Data"
 
