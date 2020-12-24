@@ -1,4 +1,4 @@
-# Figures 11-14
+# Figures 11
 
 The R code to run the simulations and methods is in "~/Simulations/Simulation R Code". Each file is for a different simulation scenario. These were run on the Harvard Odyssey Cluster ("general" partition). 
 
