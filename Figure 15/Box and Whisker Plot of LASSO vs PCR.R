@@ -45,7 +45,6 @@ p <- ggplot(PCR_gg2, aes(x = Covariates, y = RMSE,
     geom_boxplot(lwd = 1, fatten = 0.5)  +
     scale_color_manual(values=c("#ca0020", "#0868ac")) +
     scale_fill_manual(values=c("#ca0020", "#0868ac")) +
-    # scale_x_discrete(c("Raw", "Derivative")) +
     labs(x = "Covariates")  +
     theme(
         legend.text =  element_text(face="bold", color="black", size=rel(1.5)),
