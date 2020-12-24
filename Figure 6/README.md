@@ -1,4 +1,4 @@
-# Figure 7
+# Figure 6
 
 ## Methods Code
 The R code to run the methods is in the following folders:
