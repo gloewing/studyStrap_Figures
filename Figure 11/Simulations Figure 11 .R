@@ -262,9 +262,7 @@ colnames(dfBag) <- c("betaVar", "XVar", "Opt")
 p <- ggplot(data = dfBag, aes(x=XVar, y=Opt, colour = factor(betaVar))) +
     geom_line(size = 2) + 
     theme_classic(base_size = 12) + 
-    #geom_jitter(height = 0.2, width = 0.75, size = 3) 
     ylab("Optimal Bag Size") + 
-    # aes(fill=factor(betaVar))
     geom_point( size = 4 )+ xlab(TeX(sprintf('$\\sigma_{X}}'))) + 
     theme(
         plot.title = element_text(hjust = 0.5, color="red", size=14, face="bold")) +
@@ -277,7 +275,6 @@ p <- ggplot(data = dfBag, aes(x=XVar, y=Opt, colour = factor(betaVar))) +
                                      vjust = 2),
           axis.text.y = element_text(face="bold", 
                                      size=rel(2) ),
-          #legend.key.size = unit(3, "line"),
           legend.text =  element_text(face="bold", 
                                         size=rel(2) ),
           legend.title = element_text(face="bold", 
