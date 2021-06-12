@@ -440,7 +440,7 @@ ggsave("Sims_Box_sims5_ClustersLog_Legend_reduced2.pdf",
                            vjust = 0.43,
                            hjust = 0.3,
                            gp = gpar(fontface = "bold", cex = 4.25))),
-       width = 32, height = 15)
+       width = 32, height = 20) 
 
 # no clusters
 ggsave("Sims_Box_sims5_HybridShiftLog_Legend_reduced2.pdf", 
@@ -449,12 +449,12 @@ ggsave("Sims_Box_sims5_HybridShiftLog_Legend_reduced2.pdf",
                                         legend),
                            layout_matrix = rbind(matrix(seq(1,5), ncol = 2, nrow = 2), rep(10, 3) ),
                            nrow = 3, ncol = 2,
-                           heights = c(2.3, 2.3, 1), #2.3, 2.3, 1
+                           heights = c(2.3, 2.3, 1), 
                            left = textGrob(TeX('$\\mathbf{log(RMSE/RMSE_{TOM})}$'), rot = 90,
                                            vjust = 0.43,
                                            hjust = 0.3,
-                                           gp = gpar(fontface = "bold", cex = 4.25))), # 3.5
-       width = 32, height = 15)
+                                           gp = gpar(fontface = "bold", cex = 4.25))),
+       width = 32, height = 20) # height = 15
 
 
 #+++++++++++++++++++++++++++++++++++++++++++
