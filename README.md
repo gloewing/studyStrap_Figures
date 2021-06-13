@@ -8,6 +8,6 @@ Folders generally include the output files, the R code to run the methods and th
 
 Table 2 is included in the Figure 5 folder.
 
-Data from the neuroscience (FSCV) application is available upon request. 
+A link to a repository (OSF) to download the full dataset from the neuroscience (FSCV) application is in the "Data" folder.
 
-If anything is unclear or missing, please contact the author at gloewinger@gmail.com
+Please contact the author at gloewinger@gmail.com with any questions.
