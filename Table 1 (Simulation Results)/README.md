@@ -5,4 +5,4 @@ The R code to run the simulations and methods is in "~/Simulations/Simulation R 
 The output from the simulations is in Folder "~/Simulations/Results (Simulation Output Files)." 
 
 
-The code that takes that output and generates the tables is in "Simulations Table.R." The working directory will have to be changed appropriately in this file.
+The code that takes that output and generates the tables is in "Simulations Table_Reduced.R." The working directory will have to be changed appropriately in this file.
