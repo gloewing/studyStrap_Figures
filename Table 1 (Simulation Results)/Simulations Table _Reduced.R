@@ -73,6 +73,9 @@ colnames(tuneComparisonMode) <- c("SSTune", "SSTune_stack","SSTune_cps","SSTest"
 testVsOpt <- matrix(ncol = 4, nrow  = length(160:191))
 colnames(testVsOpt) <- c("SSTuned", "SSoptTest", "ARTuned", "ARoptTes")
 
+# save standard error estimates of monte carlo simulations
+seMat <- matrix(nrow = num.sims, ncol = 9)
+colnames(seMat) <- c("TOS", "TOS-Stack",  "TOS-CPS", "TSS", "TSS-Stack", "TSS-CPS", "AR",  "AR-Stack","AR-CPS")
 ###########################
 # Individual simulations
 ###########################
@@ -226,7 +229,8 @@ for( z in 1:num.sims){
     
     PCR_tableAug <- cbind(PCR_table)
     
-    
+    # standard error of monte carlo
+    seMat[z,] <- apply(PCR_table[,1:9], 2, sd) / sqrt( nrow(PCR_table)  ) # \hat{s} / sqrt{n} where n is number of monte carlo sims
     
     ## box and whisker plot with color and no legend
     Method <- rep(c("TOS", "TOS-Stack",  "TOS-CPS", "TSS", "TSS-Stack", "TSS-CPS", "AR",  "AR-Stack","AR-CPS"), 
@@ -240,22 +244,50 @@ for( z in 1:num.sims){
     #####################################################
 }
 
-bagSizeComp <- cbind(sim.matrix,tuneComparison)
-
-cbind(res.mat,testVsOpt)
-
-
-
-
+# add on parameter values to monte carlo error matrix (seMat)
 
 colOrds <- c(1,3,2,4,6,5,7,9,8) # order columns to match figures
+
+param <- rep(sim.matrix[,2], each = 2)
+s <- seq(1, length(param), by = 2)
+
+reducedMat <- matrix(NA, nrow = 2 * nrow(sim.matrix),
+                     ncol = length(colOrds) + 1)
+
+# parameters
+reducedMat[s, 1] <- paste0( round(sim.matrix[,2], 3), " (",
+                            (sim.matrix[,3])^2, ")")
+# RMSE
+reducedMat[s, -1] <- round( res.mat, digits = 2 )
+# standard error
+reducedMat[s + 1, -1] <- paste0( "(", signif( seMat, digits = 2 ), ")" )
+
+#######################################################
+#####################
+# reduced table
+#####################
 # No clusters table
-indx <- 1:12
-kable(cbind( sim.matrix[indx,2], round (100 *   res.mat[indx,colOrds], 2) ), 
+indx <- c(1, 2, 7, 8, 17, 18, 23, 24) #1:24
+kable( reducedMat[indx, c(1, colOrds + 1) ], 
       format = "latex", booktabs = T) %>% kable_styling(position = "center")
+
+# res.mat[1:12, colOrds]
 
 
 # clusters table
-indx <- 13:24
-kable(cbind( sim.matrix[indx,2], round (100 * res.mat[indx,colOrds], 2) ), 
-      format = "latex", booktabs = T) %>% kable_styling(position = "center")
+indx <- c( 25, 26, 31, 32, 41, 42, 47, 48 )
+kable( reducedMat[indx, c(1, colOrds + 1) ], 
+       format = "latex", booktabs = T) %>% kable_styling(position = "center")
+
+#########################
+# full table (supplement)
+#########################
+# No clusters table
+indx <- 1:24
+kable( reducedMat[indx, c(1, colOrds + 1) ], 
+       format = "latex", booktabs = T) %>% kable_styling(position = "center")
+
+# clusters table
+indx <- 25:48
+kable( reducedMat[indx, c(1, colOrds + 1) ], 
+       format = "latex", booktabs = T) %>% kable_styling(position = "center")
